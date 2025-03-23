@@ -5,7 +5,6 @@ class TodoBase(BaseModel):
     user_id: str
     title: str
     description: str
-    is_completed: bool
 
 
 class Todo(TodoBase):
@@ -13,5 +12,10 @@ class Todo(TodoBase):
 
 
 class TodoCreate(TodoBase):
-    iscompleted: bool = False
+    is_completed: bool = False
+    
+class TodoUpdate(TodoCreate):
+    pass
+
+class TodoResponse(Todo,TodoCreate):
     pass
